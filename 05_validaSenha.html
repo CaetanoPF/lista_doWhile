@@ -6,6 +6,12 @@
     */
 
     //Entrada
+    let PIN = Number(prompt(`Insira seu codigo PIN`))
+    let tentativas = 0
+    while ( PIN.toString().length < 4 || PIN.toString().length > 4){
+        tentativas++
+        PIN = Number(prompt(`Insira seu codigo PIN! Tentativas ${tentativas}`))
+    }
 
 
     //Processamento
