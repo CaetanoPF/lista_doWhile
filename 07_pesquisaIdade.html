@@ -13,6 +13,20 @@
     */
 
     //Entrada
+    let idade = [];
+    let sexo = [];
+    let salario = [];
+    let mulheres = 0;
+    let idadeI = Number(prompt(`Informe sua idade`));
+    while(idadeI >= 0){
+        (idadeI == 0)? idadeI = Number(prompt(`Informe sua idade`)) : null;
+        let sexoI = prompt(`Qual seu sexo? F-Feminino ; M-Masculino`).toUpperCase();
+        sexo.push(sexoI);
+        let salarioI = Number(prompt(`Informe seu salario`));
+        salario.push(salarioI);
+        idadeI = 0
+    }
+    
 
 
     //Processamento
