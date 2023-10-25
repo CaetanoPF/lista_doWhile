@@ -8,13 +8,13 @@
     //Entrada
     let PIN1 = Number(prompt(`Crie seu codigo PIN`));
     while(PIN1.toString().length != 4 || isNaN(PIN1) || Number.isInteger(PIN1) == false){
-        let PIN1 = Number(prompt(`Crie seu codigo PIN`))
+        let PIN1 = Number(prompt(`Crie seu codigo PIN`));
     };
     let PIN = Number(prompt(`Insira seu codigo PIN`));
-    let tentativas = 3
+    let tentativas = 3;
     while ( PIN1 != PIN && tentativas > 0){
         PIN = Number(prompt(`Insira seu codigo PIN! ${tentativas} Tentativas restantes`));
-        tentativas--
+        tentativas--;
     }
     (tentativas > 0)? alert(`Sucesso Senha correta!!`) : alert(`Excedeu o limite de tentativas!`);
 

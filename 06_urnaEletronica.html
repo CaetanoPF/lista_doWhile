@@ -27,15 +27,15 @@
     let voto = Number(prompt(`Urna Eletronica. 1-Joãozinho ; 2-Mariazinha ; 3-Nulo ; 4-Branco`))
     while (voto != 0){
         (voto > 4 || voto < 0 || Number.isInteger(voto) == false || isNaN(voto))? alert(`Voto não computado`): null;
-        voto = Number(prompt(`Urna Eletronica. 1-Joãozinho ; 2-Mariazinha ; 3-Nulo ; 4-Branco`))
+        voto = Number(prompt(`Urna Eletronica. 1-Joãozinho ; 2-Mariazinha ; 3-Nulo ; 4-Branco`));
         switch(voto){
             case (1): jaozinho++; break;
             case (2): mariazinha++; break;
             case (3): nulo++; break;
             case (4): branco++; break
-        }
+        };
     }
-    document.write(`Quantidade de votos gerais: ${jaozinho+mariazinha+nulo+branco} <br> Quantidade de votos do Joãozinho${jaozinho}<br>Quantidade de votos da Mariazinha: ${mariazinha} <br> Porcentagem de votos em branco: ${(branco/(jaozinho+mariazinha+nulo+branco)*100).toFixed(1)}% <br> Porcentagem de votos nulos: ${(nulo/(jaozinho+mariazinha+nulo+branco)*100).toFixed(1)}% <br> ${(jaozinho > mariazinha)? "joaozinho foi o vencedor" : "mariazinha foi a vencedora"}`)
+    document.write(`Quantidade de votos gerais: ${jaozinho+mariazinha+nulo+branco} <br> Quantidade de votos do Joãozinho${jaozinho}<br>Quantidade de votos da Mariazinha: ${mariazinha} <br> Porcentagem de votos em branco: ${(branco/(jaozinho+mariazinha+nulo+branco)*100).toFixed(1)}% <br> Porcentagem de votos nulos: ${(nulo/(jaozinho+mariazinha+nulo+branco)*100).toFixed(1)}% <br> ${(jaozinho > mariazinha)? "joaozinho foi o vencedor" : "mariazinha foi a vencedora"}`);
 
 
 
