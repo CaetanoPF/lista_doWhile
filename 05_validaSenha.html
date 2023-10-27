@@ -6,22 +6,22 @@
     */
 
     //Entrada
-    let PIN1 = Number(prompt(`Crie seu codigo PIN`));
-    while(PIN1.toString().length != 4 || isNaN(PIN1) || Number.isInteger(PIN1) == false){
-        let PIN1 = Number(prompt(`Crie seu codigo PIN`));
-    };
-    let PIN = Number(prompt(`Insira seu codigo PIN`));
-    let tentativas = 3;
-    while ( PIN1 != PIN && tentativas > 0){
-        PIN = Number(prompt(`Insira seu codigo PIN! ${tentativas} Tentativas restantes`));
-        tentativas--;
-    }
-    (tentativas > 0)? alert(`Sucesso Senha correta!!`) : alert(`Excedeu o limite de tentativas!`);
-
+    let pin = parseInt(prompt("Informe uma senha formada de quatro números inteiros:").trim());
 
     //Processamento
+    while (isNaN(pin) || Number.isInteger(pin) == false || (pin / 1000) < 1 || (pin/1000) > 10) {
+        pin = 0;
+        pin = parseInt(prompt("Valores inválidos! Tente novamemte!").trim());
+    }
 
+    let verifique = parseInt(prompt("Informe novamente sua senha para verificar:").trim());
 
+    while (pin != verifique) {
+        verifique = 0;
+        verifique = parseInt(prompt("Senha incorreta! Tente novamente!").trim());
+    }
+    
     //Saída
+    document.write(`Login bem sucedido!`);
 
 </script>

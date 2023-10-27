@@ -19,6 +19,8 @@
     let mulheres = 0;
     let idadeI = 0;
     let quantidadeMulheres = 0;
+
+    //Processamento
     while(idadeI >= 0){
         idadeI = Number(prompt(`Informe sua idade`));
         if(idadeI < 0){break};
@@ -26,26 +28,20 @@
         let sexoI = prompt(`Qual seu sexo? F-Feminino ; M-Masculino`).toUpperCase();
         sexo.push(sexoI);
         if(sexoI == "F"){quantidadeMulheres++}
-        let salarioI = Number(prompt(`Informe seu salario`));
+        let salarioI = Number(prompt(`Informe seu salário`));
         salario.push(salarioI);
     };
     let salarioMedia = salario.reduce((soma, valor) => soma + valor, 0) / salario.length;
     let maiorIdade = Math.max(...idade);
     let menorIdade = Math.min(...idade);
-    document.write(`A media dos salarios da região é: R$${salarioMedia.toFixed(2)} <br> A maior idade da região é ${maiorIdade} anos <br> A menor idade da região é ${menorIdade} anos <br> A quantidade de mulheres na região: ${quantidadeMulheres} <br>`);
+    document.write(`A média dos salários da região é: R$${salarioMedia.toFixed(2)}. <br> A maior idade da região é: ${maiorIdade} anos. <br> A menor idade da região é: ${menorIdade} anos. <br> A quantidade de mulheres na região: ${quantidadeMulheres} <br>`);
     let menorSalario = Math.min(...salario);
-    document.write(`Pessoa(s) com menor(res) salario(s): <br>`);
+    document.write(`Pessoa(s) com menor(res) salário(s): <br>`);
     for(i = salario.length-1; i >= 0; i--){
         if(salario[i] == menorSalario){
             document.write(`Idade ${idade[i]} anos, e seu sexo é ${(sexo[i] == "M")? "masculino" : "feminino"} <br>`);
         };
     };
     
-
-
-    //Processamento
-
-
-    //Saída
 
 </script>

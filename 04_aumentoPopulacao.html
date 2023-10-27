@@ -9,17 +9,15 @@
     let populacaoA = 80000;
     let populacaoB = 200000;
     let anos = 0;
-    while( populacaoA <= populacaoB){
-        populacaoA *= 1.03;
-        populacaoB *= 1.015;
-        anos++
-    }
-    console.log(anos);
-
 
     //Processamento
-
+    while (populacaoA <= populacaoB) {
+        populacaoB = populacaoB + (populacaoB * 0.015);
+        populacaoA = populacaoA + (populacaoA * 0.03);
+        anos++;
+    }
 
     //Saída
+    document.write(`Vai levar ${anos} anos para o País A alcançar o País B.`);
 
 </script>

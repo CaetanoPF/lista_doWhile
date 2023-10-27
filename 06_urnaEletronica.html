@@ -20,30 +20,41 @@
     */
 
     //Entrada
-    let jaozinho = 0;
-    let mariazinha = 0;
-    let nulo = 0;
-    let branco = 0;
-    let voto = Number(prompt(`Urna Eletronica. 1-Joãozinho ; 2-Mariazinha ; 3-Nulo ; 4-Branco`))
-    while (voto != 0){
-        (voto > 4 || voto < 0 || Number.isInteger(voto) == false || isNaN(voto))? alert(`Voto não computado`): null;
-        voto = Number(prompt(`Urna Eletronica. 1-Joãozinho ; 2-Mariazinha ; 3-Nulo ; 4-Branco`));
-        switch(voto){
-            case (1): jaozinho++; break;
-            case (2): mariazinha++; break;
-            case (3): nulo++; break;
-            case (4): branco++; break
-        };
-    }
-    document.write(`Quantidade de votos gerais: ${jaozinho+mariazinha+nulo+branco} <br> Quantidade de votos do Joãozinho${jaozinho}<br>Quantidade de votos da Mariazinha: ${mariazinha} <br> Porcentagem de votos em branco: ${(branco/(jaozinho+mariazinha+nulo+branco)*100).toFixed(1)}% <br> Porcentagem de votos nulos: ${(nulo/(jaozinho+mariazinha+nulo+branco)*100).toFixed(1)}% <br> ${(jaozinho > mariazinha)? "joaozinho foi o vencedor" : "mariazinha foi a vencedora"}`);
-
-
+    let geral = [{ candidato: "Joãozinho", votos: 0 }, { candidato: "Mariazinha", votos: 0 }, { candidato: "Branco", votos: 0 }, { candidato: "Nulo", votos: 0 }];
+    let contador = 0;
 
     //Processamento
+    while (contador < 15) {
+        contador++;
+        let voto = prompt("Informe o seu voto: J-Joãozinho, M-Mariazinha, N-Nulo e B-Branco").toUpperCase().trim();
+        switch (voto) {
+            case "J":
+                geral[0].votos++;
+                break;
+            case "M":
+                geral[1].votos++;
+                break;
+            case "B":
+                geral[2].votos++;
+                break;
+            case "N":
+                geral[3].votos++;
+                break;
+            default:
+                alert("Valor inválido!");
+                break;
+        }
+    }
 
+    const porcentagemB = (geral[2].votos * 100) / contador;
+    const porcentagemN = (geral[3].votos * 100) / contador;
+
+    geral.sort(function (x, y) {
+        return y.votos - x.votos;
+    })
 
     //Saída
+    document.write(`${geral[0].candidato}: ${geral[0].votos} Votos. <br> ${geral[1].candidato}: ${geral[1].votos} Votos. <br> ${geral[2].candidato}: ${geral[2].votos} Votos. <br> ${geral[3].candidato}: ${geral[3].votos} Votos. <br> E o vencedor é ${geral[0].candidato}. <br> A porcentagem de votos Brancos é: ${porcentagemB.toFixed(0)}% e votos Nulos: ${porcentagemN.toFixed(0)}%.`);
+
 
 </script>
-
-

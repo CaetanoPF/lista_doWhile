@@ -11,21 +11,32 @@
     */
 
     //Entrada
-    let nome = prompt(`Insira o seu nome completo`);
-    let idade = Number(prompt(`Insira sua idade`));
-    let salario = Number(prompt(`Insira seu salario mensal`));
-    let sexo = prompt(`Insira seu sexo: f- Feminino, m- Masculino`).toLowerCase();
-    let estadoCivil = prompt(`Insira seu estado civil: s- Solteiro(a), c- Casado(a), v- Viuvo(a), d- Divorciado(a)`).toLowerCase();
-    while(nome.length < 3 || (idade < 0 & idade > 150) || salario > 0 ||(sexo != "f" && sexo != "m") || (estadoCivil != "s" && estadoCivil != "c" && estadoCivil != "v" && estadoCivil != "d")){
-        nome = prompt(`Insira o seu nome completo`);
-        idade = Number(prompt(`Insira sua idade`));
-        sexo = prompt(`Insira seu sexo: f- Feminino, m- Masculino`).toLowerCase();
-        estadoCivil = prompt(`Insira seu estado civil: s- Solteiro(a), c- Casado(a), v- Viuvo(a), d- Divorciado(a)`).toLowerCase();
+    let dados = {
+        nome: prompt('Informe seu nome:'),
+        idade: prompt('Informe sua idade:'),
+        salario: prompt('Informe seu salário:'),
+        sexo: prompt('Informe seu sexo (F-Feminino ou M-Masculino):'),
+        ec: prompt('Informe seu estado civíl (S-Solteiro(a), C-Casado(a), V-Viúvo(a) ou D-Divorciado(a)):')
     }
-    console.log("aprovado");
-    //Processamento
 
+    //Processamento
+    while(dados.nome.length < 3) {
+        dados.nome = prompt('Informe seu nome (com mais de 3 caracteres):')
+    }
+    while(dados.idade < 0 || dados.idade > 150) {
+        dados.idade = prompt('Informe sua idade (entre 0 e 150 anos):')
+    }
+    while (dados.salario < 0) {
+        dados.salario = prompt('Informe seu salário (valor maior que 0):')
+    }
+    while (dados.sexo != 'f' && dados.sexo != 'm') {
+        dados.sexo = prompt('Informe seu sexo (F-Feminino ou M-Masculino):')
+    }
+    while (dados.ec != 's' && dados.ec != 'c' && dados.ec != 'v' && dados.ec != 'd' ) {
+        dados.ec = prompt('Informe seu estado civíl (S-Solteiro(a), C-Casado(a), V-Viúvo(a) ou D-Divorciado(a)):')
+    }
 
     //Saída
+    document.write(`Login bem-sucedido! Usuário: ${dados.nome}.\nIdade: ${dados.idade}.\nSalário: ${dados.salario}.\nSexo: ${dados.sexo.toLocaleUpperCase()}.\nEstado Civil: ${dados.ec}.`);
 
 </script>

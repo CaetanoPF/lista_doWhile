@@ -6,15 +6,14 @@
     */
 
     //Entrada
+    let nota = Number(prompt(`Insira uma nota de 0 a 10:`).trim());
 
-    let nota = Number(prompt(`Insira uma nota de 0 a 10:`));
-    while (nota >= 0 || nota <= 10){
-        nota = Number(prompt(`Insira uma nota de 0 a 10!!`));
-    };
-    console.log("aprovado");
     //Processamento
-
+    while (nota < 0 || nota > 10 || isNaN(nota)) {
+        nota = Number(prompt('Informe uma nota de 0 a 10:'));
+    }
 
     //Saída
+    document.write(`Nota: ${nota}`);
 
 </script>
